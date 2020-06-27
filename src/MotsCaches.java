@@ -19,7 +19,7 @@ public class MotsCaches {
                 minimumWordLength = words.length();
         }
 
-        HashSet<String> wordsFound = new HashSet<>();
+        ArrayList<String> wordsFound = new HashSet<>();
         HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
 
         
@@ -27,9 +27,11 @@ public class MotsCaches {
         for (String word : dictio){
             for (String possibleWord : possibleWords){
                 String reversedWord = new StringBuffer(word).reverse().toString();
-                if (possibleWord.contains(word) || possibleWord.contains(reversedWord)){
-                    wordsFound.add(word);
-                }
+//                if (word.equalsIgnoreCase("pere")){
+                    if (possibleWord.contains(word) || possibleWord.contains(reversedWord)){
+                        wordsFound.add(word);
+                    }
+//                }
             }
         }
         return wordsFound;
@@ -96,10 +98,14 @@ public class MotsCaches {
                 tempStringBuffer3.append(grid[gridSize - j - 1][k]);
                 tempStringBuffer4.append(grid[gridSize - k - 1][j]);
             }
-            words.add(tempStringBuffer1.toString());
-            words.add(tempStringBuffer2.toString());
-            words.add(tempStringBuffer3.toString());
-            words.add(tempStringBuffer4.toString());
+            if(!words.contains(tempStringBuffer1.reverse()))
+                words.add(tempStringBuffer1.toString());
+            if(!words.contains(tempStringBuffer2.reverse()))
+                words.add(tempStringBuffer2.toString());
+            if(!words.contains(tempStringBuffer3.reverse()))
+                words.add(tempStringBuffer3.toString());
+            if(!words.contains(tempStringBuffer4.reverse()))
+                words.add(tempStringBuffer4.toString());
         }
     }
 }
