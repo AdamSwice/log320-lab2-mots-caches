@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class main {
     private static char[][] grid;
@@ -11,23 +8,21 @@ public class main {
     public static void main(String[] args) {
         long start=System.nanoTime();
         try {
-            FileManager file = new FileManager(new BufferedReader(new FileReader("C:/Users/Swicy/Desktop/log320-lab2-mots-caches/src/grid_demo.txt")),
-                                            (new BufferedReader(new FileReader("C:/Users/Swicy/Desktop/log320-lab2-mots-caches/src/dict_demo.txt"))));
-//            FileManager file = new FileManager(new BufferedReader(new FileReader("D:/log320-lab2-mots-caches/src/grid_demo.txt")),
-//                    (new BufferedReader(new FileReader("D:/log320-lab2-mots-caches/src/dict_demo.txt"))));
+            FileManager file = new FileManager(new BufferedReader(new FileReader("D:/log320-lab2-mots-caches/src/grid_demo.txt")),
+                    (new BufferedReader(new FileReader("D:/log320-lab2-mots-caches/src/dict_demo.txt"))));
             grid = file.getGrid();
             dictio = file.getList();
             MotsCaches motsCaches = new MotsCaches(dictio, grid);
-            Set<String> wordsFound = motsCaches.wordFinder();
+            PriorityQueue<String> wordsFound = motsCaches.wordFinder();
 
-            List<String> sortedWordList = new ArrayList<>(wordsFound);
-            Collections.sort(sortedWordList);
+//            List<String> sortedWordList = new ArrayList<>(wordsFound);
+//            Collections.sort(sortedWordList);
 
-            for (String word : sortedWordList){
+            for (String word : wordsFound){
                 System.out.println(word);
             }
-            int totalWordsFound = wordsFound.size() + 1;
-            System.out.println("Nombre de mots trouvés dans la grille: " + totalWordsFound);
+
+            System.out.println("Nombre de mots trouvés dans la grille: " + wordsFound.size());
 
 
         } catch (Exception e) {

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 public class MotsCaches {
@@ -12,21 +13,21 @@ public class MotsCaches {
     }
 
 
-    public Set<String> wordFinder(){
+    public PriorityQueue<String> wordFinder(){
         int minimumWordLength = Integer.MAX_VALUE;
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
                 minimumWordLength = words.length();
         }
 
-        ArrayList<String> wordsFound = new HashSet<>();
+        PriorityQueue<String> wordsFound = new PriorityQueue<>();
         HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
 
         
 
         for (String word : dictio){
             for (String possibleWord : possibleWords){
-                String reversedWord = new StringBuffer(word).reverse().toString();
+                String reversedWord = new StringBuilder(word).reverse().toString();
 //                if (word.equalsIgnoreCase("pere")){
                     if (possibleWord.contains(word) || possibleWord.contains(reversedWord)){
                         wordsFound.add(word);
@@ -65,7 +66,7 @@ public class MotsCaches {
 
     private void columnWordMaker(HashSet<String> words, int gridSize){
         for (int i = 0; i < gridSize; i++){
-            StringBuffer stringBuilder = new StringBuffer();
+            StringBuilder stringBuilder = new StringBuilder();
             for (int j = 0; j < gridSize; j++){
                 stringBuilder.append(grid[j][i]);
             }
@@ -74,8 +75,8 @@ public class MotsCaches {
     }
 
     private void mainDiagonalWordMaker(HashSet<String> words, int gridSize){
-        StringBuffer diagonalStringBuilder1 = new StringBuffer();
-        StringBuffer diagonalStringBuilder2 = new StringBuffer();
+        StringBuilder diagonalStringBuilder1 = new StringBuilder();
+        StringBuilder diagonalStringBuilder2 = new StringBuilder();
 
         for (int i = 0; i < gridSize; i++){
             diagonalStringBuilder1  = diagonalStringBuilder1.append(grid[i][i]);
@@ -87,25 +88,25 @@ public class MotsCaches {
 
     private void reverseDiagonalWordMaker(HashSet<String> words, int gridSize, int minimumWordLength){
         for (int i = 0; i < gridSize - minimumWordLength; i++){
-            StringBuffer tempStringBuffer1 = new StringBuffer();
-            StringBuffer tempStringBuffer2 = new StringBuffer();
-            StringBuffer tempStringBuffer3 = new StringBuffer();
-            StringBuffer tempStringBuffer4 = new StringBuffer();
+            StringBuilder tempStringBuilder1 = new StringBuilder();
+            StringBuilder tempStringBuilder2 = new StringBuilder();
+            StringBuilder tempStringBuilder3 = new StringBuilder();
+            StringBuilder tempStringBuilder4 = new StringBuilder();
 
             for (int j = i, k = 0; j < gridSize && k < gridSize; j++, k++){
-                tempStringBuffer1.append(grid[j][k]);
-                tempStringBuffer2.append(grid[k][j]);
-                tempStringBuffer3.append(grid[gridSize - j - 1][k]);
-                tempStringBuffer4.append(grid[gridSize - k - 1][j]);
+                tempStringBuilder1.append(grid[j][k]);
+                tempStringBuilder2.append(grid[k][j]);
+                tempStringBuilder3.append(grid[gridSize - j - 1][k]);
+                tempStringBuilder4.append(grid[gridSize - k - 1][j]);
             }
-            if(!words.contains(tempStringBuffer1.reverse()))
-                words.add(tempStringBuffer1.toString());
-            if(!words.contains(tempStringBuffer2.reverse()))
-                words.add(tempStringBuffer2.toString());
-            if(!words.contains(tempStringBuffer3.reverse()))
-                words.add(tempStringBuffer3.toString());
-            if(!words.contains(tempStringBuffer4.reverse()))
-                words.add(tempStringBuffer4.toString());
+            if(!words.contains(tempStringBuilder1.reverse()))
+                words.add(tempStringBuilder1.toString());
+            if(!words.contains(tempStringBuilder2.reverse()))
+                words.add(tempStringBuilder2.toString());
+            if(!words.contains(tempStringBuilder3.reverse()))
+                words.add(tempStringBuilder3.toString());
+            if(!words.contains(tempStringBuilder4.reverse()))
+                words.add(tempStringBuilder4.toString());
         }
     }
 }
