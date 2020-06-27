@@ -2,14 +2,14 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class main {
-    private static Grid[][] grid;
+    private static char[][] grid;
     private static ArrayList<String> dictio;
 
     public static void main(String[] args) {
         long start=System.nanoTime();
         try {
-            FileManager file = new FileManager(new BufferedReader(new FileReader("F:/Epic Games/untitled5/src/grid_demo.txt")),
-                                            (new BufferedReader(new FileReader("F:/Epic Games/untitled5/src/dict_demo.txt"))));
+            FileManager file = new FileManager(new BufferedReader(new FileReader("C:/Users/Swicy/Desktop/log320-lab2-mots-caches/src/grid_demo.txt")),
+                                            (new BufferedReader(new FileReader("C:/Users/Swicy/Desktop/log320-lab2-mots-caches/src/dict_demo.txt"))));
             grid = file.getGrid();
             dictio = file.getList();
             MotsCaches motsCaches = new MotsCaches(dictio, grid);

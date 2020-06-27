@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class FileManager {
-    private static Grid[][] grid;
+    private static char[][] grid;
     private static ArrayList<String> list= new ArrayList<>();
 
     public FileManager(BufferedReader gridReader, BufferedReader dictioReader) throws Exception{
@@ -22,12 +22,12 @@ public class FileManager {
 
             int gridSize=Integer.parseInt(br.readLine());
 
-            grid=new Grid [gridSize][gridSize];
+            grid=new char[gridSize][gridSize];
             int currentLine=0;
             while ((line = br.readLine()) != null) {
                 for(int i=0;i<gridSize;i++){
 
-                    grid[currentLine][i]=new Grid(line.charAt(i));
+                    grid[currentLine][i]=line.charAt(i);
                 }
                 currentLine++;
             }
@@ -51,13 +51,6 @@ public class FileManager {
         }
 
     }
-    public Grid[][] getGrid() {
-        return grid;
-    }
-
-    public void setGrid(Grid[][] grid) {
-        FileManager.grid = grid;
-    }
 
     public ArrayList<String> getList() {
         return list;
@@ -65,5 +58,13 @@ public class FileManager {
 
     public void setList(ArrayList<String> list) {
         FileManager.list = list;
+    }
+
+    public static char[][] getGrid() {
+        return grid;
+    }
+
+    public static void setGrid(char[][] grid) {
+        FileManager.grid = grid;
     }
 }
