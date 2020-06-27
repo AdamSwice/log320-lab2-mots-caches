@@ -6,13 +6,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class FileManager {
-    public static class Grid{
-        char letter='-';
-        boolean used=false;
-        public  Grid(char letter){
-            this.letter=letter;
-        }
-    }
     private static Grid[][] grid;
     private static ArrayList<String> list= new ArrayList<>();
 
