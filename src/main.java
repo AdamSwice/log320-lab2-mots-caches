@@ -3,15 +3,16 @@ import java.util.ArrayList;
 
 public class main {
     private static Grid[][] grid;
-    private static ArrayList<String> disct;
+    private static ArrayList<String> dictio;
 
     public static void main(String[] args) {
         long start=System.nanoTime();
         try {
             FileManager file = new FileManager(new BufferedReader(new FileReader("F:/Epic Games/untitled5/src/grid_demo.txt")),
                                             (new BufferedReader(new FileReader("F:/Epic Games/untitled5/src/dict_demo.txt"))));
-            grid =file.getGrid();
-            disct=file.getList();
+            grid = file.getGrid();
+            dictio = file.getList();
+            MotsCaches motsCaches = new MotsCaches(dictio, grid);
 
         } catch (Exception e) {
             e.printStackTrace();
