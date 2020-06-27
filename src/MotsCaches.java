@@ -40,11 +40,28 @@ public class MotsCaches {
         HashSet<String> words = new HashSet<>();
 
         //Chaque ligne
+        rowWordMaker(words, gridSize);
+
+        //Chaque colonne
+        columnWordMaker(words, gridSize);
+
+        //Diagonales principale \
+        mainDiagonalWordMaker(words, gridSize);
+
+        //Diagonale principale inverse /
+        reverseDiagonalWordMaker(words, gridSize, minimumWordLength);
+
+        return words;
+    }
+
+
+    private void rowWordMaker(HashSet<String> words, int gridSize){
         for (int i = 0; i < gridSize; i++){
             words.add(new String(this.grid[i]));
         }
+    }
 
-        //Chaque colonne
+    private void columnWordMaker(HashSet<String> words, int gridSize){
         for (int i = 0; i < gridSize; i++){
             StringBuffer stringBuilder = new StringBuffer();
             for (int j = 0; j < gridSize; j++){
@@ -52,8 +69,9 @@ public class MotsCaches {
             }
             words.add(stringBuilder.toString());
         }
+    }
 
-        //Diagonales principale \
+    private void mainDiagonalWordMaker(HashSet<String> words, int gridSize){
         StringBuffer diagonalStringBuilder1 = new StringBuffer();
         StringBuffer diagonalStringBuilder2 = new StringBuffer();
 
@@ -63,8 +81,9 @@ public class MotsCaches {
         }
         words.add(diagonalStringBuilder1.toString());
         words.add(diagonalStringBuilder2.toString());
+    }
 
-        //Diagonale principale inverse /
+    private void reverseDiagonalWordMaker(HashSet<String> words, int gridSize, int minimumWordLength){
         for (int i = 0; i < gridSize - minimumWordLength; i++){
             StringBuffer tempStringBuffer1 = new StringBuffer();
             StringBuffer tempStringBuffer2 = new StringBuffer();
@@ -82,8 +101,5 @@ public class MotsCaches {
             words.add(tempStringBuffer3.toString());
             words.add(tempStringBuffer4.toString());
         }
-
-        return words;
     }
-
 }
