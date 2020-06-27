@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MotsCaches {
     private char[][] grid;
@@ -10,15 +12,15 @@ public class MotsCaches {
     }
 
 
-    public PriorityQueue<String> wordFinder(){
+    public Set<String> wordFinder(){
         int minimumWordLength = Integer.MAX_VALUE;
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
                 minimumWordLength = words.length();
         }
 
-        PriorityQueue<String> wordsFound = new PriorityQueue<>();
-        PriorityQueue<String> possibleWords = findPossibleWords(minimumWordLength);
+        HashSet<String> wordsFound = new HashSet<>();
+        HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
 
         
 
@@ -33,9 +35,9 @@ public class MotsCaches {
         return wordsFound;
     }
 
-    private PriorityQueue<String> findPossibleWords(int minimumWordLength){
+    private HashSet<String> findPossibleWords(int minimumWordLength){
         int gridSize = grid.length;
-        PriorityQueue<String> words = new PriorityQueue<>();
+        HashSet<String> words = new HashSet<>();
 
         //Chaque ligne
         for (int i = 0; i < gridSize; i++){
