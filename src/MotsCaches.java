@@ -48,7 +48,8 @@ public class MotsCaches {
         //Chaque colonne
         columnWordMaker(words, gridSize);
 
-        //Diagonales principale \
+        //Diagonales principale
+        //TODO: Utiliter a valider
         mainDiagonalWordMaker(words, gridSize);
 
         //Diagonale principale inverse /
