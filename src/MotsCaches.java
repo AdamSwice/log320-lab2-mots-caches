@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.*;
 
 public class MotsCaches {
     private char[][] grid;
@@ -13,29 +10,33 @@ public class MotsCaches {
     }
 
 
-    public PriorityQueue<String> wordFinder(){
+    public void wordFinder(){
         int minimumWordLength = Integer.MAX_VALUE;
+        int totalCount=0;
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
                 minimumWordLength = words.length();
         }
-
-        PriorityQueue<String> wordsFound = new PriorityQueue<>();
+        Collections.sort(dictio,String.CASE_INSENSITIVE_ORDER);
         HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
-
-        
 
         for (String word : dictio){
             for (String possibleWord : possibleWords){
                 String reversedWord = new StringBuilder(word).reverse().toString();
-//                if (word.equalsIgnoreCase("pere")){
                     if (possibleWord.contains(word) || possibleWord.contains(reversedWord)){
-                        wordsFound.add(word);
+                        int count = ( possibleWord.split(word, -1).length ) - 1;
+                        count+=( possibleWord.split(reversedWord, -1).length ) - 1;
+                        for(int i=0 ; i<count ; i++){
+                            System.out.println(word);
+                            totalCount++;
+                        }
+
                     }
-//                }
+
             }
         }
-        return wordsFound;
+        System.out.println("Nombre de mots trouvés dans la grille: " + totalCount);
+
     }
 
     private HashSet<String> findPossibleWords(int minimumWordLength){
