@@ -11,12 +11,15 @@ public class MotsCaches {
 
 
     public void wordFinder(){
+
         int minimumWordLength = Integer.MAX_VALUE;
         int totalCount=0;
+
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
                 minimumWordLength = words.length();
         }
+
         Collections.sort(dictio,String.CASE_INSENSITIVE_ORDER);
         HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
 
@@ -50,7 +53,6 @@ public class MotsCaches {
         columnWordMaker(words, gridSize);
 
         //Diagonales principale
-        //TODO: Utiliter a valider
         mainDiagonalWordMaker(words, gridSize);
 
         //Diagonale principale inverse /
