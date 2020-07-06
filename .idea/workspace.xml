@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1cde892d-de3e-42d5-bdf9-341ca70b0e19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/log320-lab2-mots-caches/MotsCaches.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/log320-lab2-mots-caches/MotsCaches.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/log320-lab2-mots-caches/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/log320-lab2-mots-caches/main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MotsCaches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MotsCaches.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
@@ -28,12 +30,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="232" />
-    <option name="y" value="-8" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
   </component>
   <component name="ProjectId" id="1dujSGshcDLeY9jComQFbB2Fgbq" />
   <component name="ProjectViewState">
@@ -95,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593286077340</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="100% fonctionnel">
+      <created>1594070108570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594070108570</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -114,10 +117,11 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1010" y="487" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1594069241814" />
-    <state x="434" y="108" key="CommitChangelistDialog2" timestamp="1593286076710">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="579" y="145" key="CommitChangelistDialog2" timestamp="1594070107917">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="434" y="108" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593286076710" />
+    <state x="579" y="145" key="CommitChangelistDialog2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1594070107917" />
     <state x="4" y="76" key="DiffContextDialog" timestamp="1593286070173">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -170,10 +174,11 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="761" y="279" key="SettingsEditor/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1594069258763" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1593286083839">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="736" y="345" key="Vcs.Push.Dialog.v2" timestamp="1594070114357">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593286083839" />
+    <state x="736" y="345" key="Vcs.Push.Dialog.v2/0.0.2560.1409/-1920.0.1920.1050@0.0.2560.1409" timestamp="1594070114357" />
     <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1593892144676">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>

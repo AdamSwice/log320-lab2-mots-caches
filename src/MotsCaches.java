@@ -13,6 +13,7 @@ public class MotsCaches {
     public void wordFinder(){
 
         int minimumWordLength = Integer.MAX_VALUE;
+        int totalCount=0;
 
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
@@ -30,10 +31,15 @@ public class MotsCaches {
                         count+=( possibleWord.split(reversedWord, -1).length ) - 1;
                         for(int i=0 ; i<count ; i++){
                             System.out.println(word);
+
                         }
+
                     }
+
             }
         }
+        System.out.println("La grille contient " + totalCount+" mots du dictionnaire");
+
     }
 
     private HashSet<String> findPossibleWords(int minimumWordLength){

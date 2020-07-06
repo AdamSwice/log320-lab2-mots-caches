@@ -6,7 +6,7 @@ public class main {
     private static ArrayList<String> dictio;
 
     public static void main(String[] args) {
-
+        long start=System.nanoTime();
         try {
             FileManager file = new FileManager(new BufferedReader(new FileReader(args[0])),
                     (new BufferedReader(new FileReader(args[1]))));
@@ -18,6 +18,7 @@ public class main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("Temps d'execution : " + (double)(System.nanoTime()-start)/1000000000 + "secondes");
     }
 
 }
