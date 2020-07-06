@@ -13,14 +13,13 @@ public class MotsCaches {
     public void wordFinder(){
 
         int minimumWordLength = Integer.MAX_VALUE;
-        int totalCount=0;
 
         for(String words : dictio) {
             if(words.length() < minimumWordLength)
                 minimumWordLength = words.length();
         }
 
-        Collections.sort(dictio,String.CASE_INSENSITIVE_ORDER);
+        //Collections.sort(dictio,String.CASE_INSENSITIVE_ORDER);
         HashSet<String> possibleWords = findPossibleWords(minimumWordLength);
 
         for (String word : dictio){
@@ -31,15 +30,10 @@ public class MotsCaches {
                         count+=( possibleWord.split(reversedWord, -1).length ) - 1;
                         for(int i=0 ; i<count ; i++){
                             System.out.println(word);
-                            totalCount++;
                         }
-
                     }
-
             }
         }
-        System.out.println("Nombre de mots trouvés dans la grille: " + totalCount);
-
     }
 
     private HashSet<String> findPossibleWords(int minimumWordLength){
