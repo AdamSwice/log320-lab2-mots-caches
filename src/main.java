@@ -18,7 +18,7 @@ public class main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Temps d'execution : " + (double)(System.nanoTime()-start)/1000000000 + "secondes");
+        System.out.println("Temps d'exécution : " + (double)(System.nanoTime()-start)/1000000000 + "secondes");
     }
 
 }

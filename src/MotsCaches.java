@@ -31,7 +31,7 @@ public class MotsCaches {
                         count+=( possibleWord.split(reversedWord, -1).length ) - 1;
                         for(int i=0 ; i<count ; i++){
                             System.out.println(word);
-
+                            totalCount++;
                         }
 
                     }
